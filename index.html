@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>VUE calculator</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="icons8-плюс-16.ico" type="image/x-icon">
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/lcd" type="text/css"/>
+</head>
+<body>
+	<div id="app">
+		<div class="grid">
+			<input type="text" v-model="result" placeholder="0" @keyup.enter="calculate" @keyup.esc="reset">
+			<button class="calculator__btn" v-for="num in numbers" @click="input(num)">{{num}}</button>
+			<button class="calculator__btn options" v-for="op in operators" @click="input(op)">{{op}}</button>
+			<button class="calculator__btn options" @click="reset">C</button>
+			<button class="calculator__btn options last" @click="calculate">=</button>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>
